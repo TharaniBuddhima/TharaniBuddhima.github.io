@@ -1,353 +1,1356 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description"
+        content="Tharani Budhima - Physical Science ICT undergraduate focused on cybersecurity, ethical hacking, vulnerability assessment and network security.">
+
     <title>Tharani Budhima | Cybersecurity Portfolio</title>
 
     <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #0b0f19;
-            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080c14;
+            color: #f5f7fa;
             line-height: 1.6;
         }
 
-        header {
-            background: #111827;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
+        a {
+            text-decoration: none;
         }
 
-        header h2 {
-            color: #00ff99;
+        .container {
+            width: 88%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(8, 12, 20, 0.92);
+            border-bottom: 1px solid #1d2635;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00f5a0;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #ffffff;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
         }
 
         nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
+            color: #c6ced9;
+            font-size: 15px;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            color: #00ff99;
+            color: #00f5a0;
         }
 
-        section {
-            padding: 80px 8%;
-        }
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
-            min-height: 90vh;
+            min-height: 88vh;
+
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            background: #00f5a0;
+            opacity: 0.05;
+
+            border-radius: 50%;
+
+            top: -150px;
+            right: -150px;
+
+            filter: blur(100px);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 60px;
+
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+
+            padding: 7px 14px;
+
+            border: 1px solid #1f8f6b;
+            border-radius: 20px;
+
+            color: #00f5a0;
+            font-size: 13px;
+
+            margin-bottom: 22px;
+
+            background: rgba(0, 245, 160, 0.04);
         }
 
         .hero h1 {
-            font-size: 55px;
-            margin-bottom: 15px;
-        }
+            font-size: clamp(42px, 6vw, 70px);
+            line-height: 1.05;
 
-        .hero h1 span {
-            color: #00ff99;
-        }
-
-        .hero h3 {
-            font-size: 25px;
-            color: #b8c1d1;
             margin-bottom: 20px;
         }
 
-        .hero p {
-            max-width: 700px;
-            color: #aeb7c7;
-            font-size: 18px;
+        .hero h1 span {
+            color: #00f5a0;
         }
 
-        .button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 25px;
-            background: #00ff99;
-            color: #07100c;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
+        .hero h2 {
+            color: #aeb8c7;
+            font-size: 22px;
+            font-weight: normal;
+
+            margin-bottom: 22px;
         }
 
-        .button:hover {
-            background: #00cc7a;
-        }
-
-        h2.section-title {
-            font-size: 35px;
-            margin-bottom: 30px;
-            color: #00ff99;
-        }
-
-        .about p {
-            max-width: 850px;
-            color: #c4cad5;
+        .hero-description {
+            color: #929dad;
+            max-width: 680px;
             font-size: 17px;
         }
 
-        .skills {
+        .hero-buttons {
+            margin-top: 32px;
+
             display: flex;
-            flex-wrap: wrap;
             gap: 15px;
+            flex-wrap: wrap;
         }
 
-        .skill {
-            background: #151c2b;
-            padding: 12px 20px;
+        .btn {
+            display: inline-block;
+
+            padding: 12px 22px;
+
             border-radius: 6px;
-            border: 1px solid #263247;
+
+            font-weight: bold;
+            font-size: 14px;
+
+            transition: 0.3s;
         }
 
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+        .btn-primary {
+            background: #00f5a0;
+            color: #06110c;
         }
 
-        .project {
-            background: #151c2b;
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background: #00d98e;
+        }
+
+        .btn-secondary {
+            border: 1px solid #344052;
+            color: #e4e8ed;
+        }
+
+        .btn-secondary:hover {
+            border-color: #00f5a0;
+            color: #00f5a0;
+        }
+
+
+        /* TERMINAL CARD */
+
+        .terminal {
+            background: #0d131e;
+            border: 1px solid #263244;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .terminal-header {
+            background: #151c29;
+
+            padding: 12px 15px;
+
+            display: flex;
+            gap: 7px;
+
+            border-bottom: 1px solid #263244;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #4c5868;
+        }
+
+        .terminal-body {
             padding: 25px;
-            border-radius: 8px;
-            border: 1px solid #263247;
+
+            font-family: Consolas, monospace;
+            font-size: 14px;
+
+            color: #9eabbc;
         }
 
-        .project h3 {
-            color: #00ff99;
-            margin-bottom: 10px;
+        .terminal-line {
+            margin-bottom: 13px;
         }
 
-        .project p {
-            color: #b8c1d1;
+        .terminal-green {
+            color: #00f5a0;
+        }
+
+        .terminal-white {
+            color: #ffffff;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-label {
+            color: #00f5a0;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            text-transform: uppercase;
+            letter-spacing: 2px;
+
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            color: #8f99a9;
+            max-width: 750px;
+            margin-bottom: 45px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 60px;
+        }
+
+        .about-text p {
+            color: #aeb7c5;
+            margin-bottom: 18px;
+        }
+
+        .info-card {
+            background: #0e141f;
+
+            border: 1px solid #222d3d;
+            border-radius: 10px;
+
+            padding: 25px;
+        }
+
+        .info-item {
+            padding: 15px 0;
+
+            border-bottom: 1px solid #202a39;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: #7f8a9b;
+            font-size: 13px;
+        }
+
+        .info-value {
+            color: #e8edf3;
+            margin-top: 4px;
+        }
+
+        .highlight {
+            color: #00f5a0;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .skill-card {
+            background: #0e141f;
+
+            border: 1px solid #222d3d;
+            border-radius: 9px;
+
+            padding: 22px;
+
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            border-color: #00a873;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .skill-card p {
+            color: #8f9aaa;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .project-card {
+            background: #0e141f;
+
+            border: 1px solid #222d3d;
+            border-radius: 10px;
+
+            padding: 28px;
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #00a873;
+        }
+
+        .project-number {
+            color: #00f5a0;
+
+            font-family: Consolas, monospace;
+            font-size: 13px;
+
             margin-bottom: 15px;
         }
 
-        .project a {
-            color: #00ff99;
-            text-decoration: none;
+        .project-card h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
         }
 
-        .contact p {
-            margin-bottom: 10px;
-            color: #c4cad5;
+        .project-card p {
+            color: #929dac;
+            font-size: 15px;
+            margin-bottom: 20px;
         }
+
+        .project-tools {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+
+            margin-bottom: 22px;
+        }
+
+        .tool {
+            padding: 5px 9px;
+
+            background: #151e2b;
+            border: 1px solid #273447;
+
+            border-radius: 4px;
+
+            color: #aeb8c7;
+            font-size: 12px;
+        }
+
+        .project-link {
+            color: #00f5a0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =========================
+           EDUCATION / LEARNING
+        ========================= */
+
+        .learning-card {
+            background: #0e141f;
+
+            border: 1px solid #222d3d;
+            border-radius: 10px;
+
+            padding: 28px;
+
+            max-width: 850px;
+        }
+
+        .learning-card h3 {
+            margin-bottom: 7px;
+        }
+
+        .learning-card .institution {
+            color: #00f5a0;
+            margin-bottom: 15px;
+        }
+
+        .learning-card p {
+            color: #929dac;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-box {
+            background: #0e141f;
+
+            border: 1px solid #222d3d;
+            border-radius: 10px;
+
+            padding: 40px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 30px;
+        }
+
+        .contact-box h2 {
+            margin-bottom: 10px;
+        }
+
+        .contact-box p {
+            color: #929dac;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
+            border-top: 1px solid #1d2635;
+
+            padding: 30px 0;
+
             text-align: center;
-            padding: 25px;
-            background: #111827;
-            color: #8993a5;
+
+            color: #697586;
+            font-size: 13px;
         }
 
-        @media (max-width: 700px) {
-            .hero h1 {
-                font-size: 40px;
-            }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 850px) {
 
             nav {
                 display: none;
             }
+
+            .hero-content,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .terminal {
+                max-width: 600px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
+
+
+        @media (max-width: 550px) {
+
+            .container {
+                width: 90%;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h2 {
+                font-size: 18px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+        }
+
     </style>
 </head>
 
+
 <body>
 
-<header>
-    <h2>TB.</h2>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header>
+
+    <div class="container nav-container">
+
+        <a href="#" class="logo">
+            TB<span>.</span>
+        </a>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </div>
+
 </header>
 
 
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
-    <h1>Hi, I'm <span>Tharani Budhima</span></h1>
 
-    <h3>Cybersecurity Undergraduate</h3>
+    <div class="container hero-content">
 
-    <p>
-        Undergraduate with a strong interest in cybersecurity, ethical hacking,
-        vulnerability assessment, network security and security analysis.
-        Currently developing practical skills through hands-on security projects
-        and laboratory environments.
-    </p>
+        <div>
 
-    <a class="button" href="#projects">View My Projects</a>
+            <div class="hero-tag">
+                PHYSICAL SCIENCE ICT · CYBERSECURITY
+            </div>
+
+            <h1>
+                Hi, I'm <span>Tharani Budhima</span>
+            </h1>
+
+            <h2>
+                Physical Science ICT Undergraduate | Cybersecurity & Ethical Hacking
+            </h2>
+
+            <p class="hero-description">
+                I am building practical cybersecurity skills through hands-on
+                projects in network security, vulnerability assessment,
+                web application security, traffic analysis and password security.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn btn-primary">
+                    Explore My Projects
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="terminal">
+
+            <div class="terminal-header">
+
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+
+            </div>
+
+            <div class="terminal-body">
+
+                <div class="terminal-line">
+                    <span class="terminal-green">$</span>
+                    whoami
+                </div>
+
+                <div class="terminal-line terminal-white">
+                    Tharani Budhima
+                </div>
+
+                <div class="terminal-line">
+                    <span class="terminal-green">$</span>
+                    focus
+                </div>
+
+                <div class="terminal-line terminal-white">
+                    Cybersecurity & Ethical Hacking
+                </div>
+
+                <div class="terminal-line">
+                    <span class="terminal-green">$</span>
+                    tools
+                </div>
+
+                <div class="terminal-line terminal-white">
+                    Nmap · Wireshark · Burp Suite
+                </div>
+
+                <div class="terminal-line terminal-white">
+                    Kali Linux · OWASP · GitHub
+                </div>
+
+                <div class="terminal-line">
+                    <span class="terminal-green">$</span>
+                    status
+                </div>
+
+                <div class="terminal-line terminal-white">
+                    Learning · Building · Improving
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
 
-<section id="about" class="about">
-    <h2 class="section-title">About Me</h2>
 
-    <p>
-        I am an undergraduate in Physical Science ICT with a focus on developing
-        practical cybersecurity and ethical hacking skills. My learning involves
-        network scanning, traffic analysis, vulnerability assessment,
-        web application security and password security.
-    </p>
+<!-- =========================
+     ABOUT
+========================= -->
 
-    <br>
+<section id="about">
 
-    <p>
-        I enjoy working with security tools and building hands-on projects to
-        understand how vulnerabilities can be identified, analyzed and addressed.
-    </p>
+    <div class="container">
+
+        <div class="section-label">
+            01 · About
+        </div>
+
+        <h2 class="section-title">
+            Building toward a career in cybersecurity.
+        </h2>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    I am an undergraduate studying Physical Science ICT at the
+                    University of Sri Jayewardenepura, with a strong career
+                    focus on cybersecurity and ethical hacking.
+                </p>
+
+                <p>
+                    My cybersecurity learning is supported by hands-on projects
+                    involving network reconnaissance, packet analysis,
+                    vulnerability assessment, web application security and
+                    password security.
+                </p>
+
+                <p>
+                    I believe in learning cybersecurity through practical
+                    experimentation, authorized security testing and continuous
+                    improvement of technical skills.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-item">
+
+                    <div class="info-label">
+                        Degree
+                    </div>
+
+                    <div class="info-value">
+                        Physical Science ICT
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <div class="info-label">
+                        Career Focus
+                    </div>
+
+                    <div class="info-value highlight">
+                        Cybersecurity & Ethical Hacking
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <div class="info-label">
+                        Current Focus
+                    </div>
+
+                    <div class="info-value">
+                        Practical Security Projects
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <div class="info-label">
+                        Location
+                    </div>
+
+                    <div class="info-value">
+                        Sri Lanka
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
+
+
+<!-- =========================
+     SKILLS
+========================= -->
 
 <section id="skills">
-    <h2 class="section-title">Cybersecurity Skills</h2>
 
-    <div class="skills">
-        <div class="skill">Nmap</div>
-        <div class="skill">Wireshark</div>
-        <div class="skill">Burp Suite</div>
-        <div class="skill">Kali Linux</div>
-        <div class="skill">OWASP</div>
-        <div class="skill">DVWA</div>
-        <div class="skill">John the Ripper</div>
-        <div class="skill">Network Security</div>
-        <div class="skill">Web Security</div>
-        <div class="skill">Vulnerability Assessment</div>
-        <div class="skill">Ethical Hacking</div>
-        <div class="skill">Git & GitHub</div>
+    <div class="container">
+
+        <div class="section-label">
+            02 · Skills
+        </div>
+
+        <h2 class="section-title">
+            Security Skills & Technologies
+        </h2>
+
+        <p class="section-description">
+            Technologies and areas I am developing through coursework,
+            practical labs and cybersecurity projects.
+        </p>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <h3>Network Security</h3>
+
+                <p>
+                    Network reconnaissance, port scanning,
+                    packet inspection and traffic analysis.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>Web Security</h3>
+
+                <p>
+                    Web application security testing,
+                    vulnerability identification and analysis.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>Ethical Hacking</h3>
+
+                <p>
+                    Authorized security testing and practical
+                    penetration testing fundamentals.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>Security Tools</h3>
+
+                <p>
+                    Nmap, Wireshark, Burp Suite,
+                    John the Ripper and Kali Linux.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>Security Frameworks</h3>
+
+                <p>
+                    OWASP concepts and common
+                    web application security risks.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>Development</h3>
+
+                <p>
+                    Git, GitHub, Java, Python,
+                    HTML, CSS and basic web development.
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
+
 </section>
 
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
 
 <section id="projects">
-    <h2 class="section-title">Projects</h2>
 
-    <div class="projects">
+    <div class="container">
 
-        <div class="project">
-            <h3>Nmap Port Scan Project</h3>
-
-            <p>
-                Practical network reconnaissance project using Nmap to identify
-                open ports and understand exposed network services.
-            </p>
-
-            <a href="https://github.com/TharaniBuddhima/nmap-port-scan-project"
-               target="_blank">
-                View on GitHub →
-            </a>
+        <div class="section-label">
+            03 · Projects
         </div>
 
+        <h2 class="section-title">
+            Hands-on Security Projects
+        </h2>
 
-        <div class="project">
-            <h3>Wireshark Traffic Analysis</h3>
-
-            <p>
-                Network traffic analysis project involving packet inspection,
-                protocols, IP endpoints and TCP communication.
-            </p>
-
-            <a href="https://github.com/TharaniBuddhima/wireshark-traffic-analysis"
-               target="_blank">
-                View on GitHub →
-            </a>
-        </div>
+        <p class="section-description">
+            Practical projects created to develop real-world cybersecurity
+            knowledge and security analysis skills.
+        </p>
 
 
-        <div class="project">
-            <h3>Wireshark Suspicious Traffic Analysis</h3>
-
-            <p>
-                Practical investigation of suspicious network traffic including
-                SYN, ICMP, DNS and TCP communication.
-            </p>
-
-            <a href="https://github.com/TharaniBuddhima/wireshark-suspicious-analysis"
-               target="_blank">
-                View on GitHub →
-            </a>
-        </div>
+        <div class="projects-grid">
 
 
-        <div class="project">
-            <h3>John the Ripper Password Security</h3>
+            <!-- PROJECT 01 -->
 
-            <p>
-                Hands-on password security project exploring password hashes
-                and password-cracking techniques in an ethical lab environment.
-            </p>
+            <div class="project-card">
 
-            <a href="https://github.com/TharaniBuddhima/John-the-Ripper-Password-Cracking-Project"
-               target="_blank">
-                View on GitHub →
-            </a>
-        </div>
+                <div class="project-number">
+                    PROJECT 01
+                </div>
+
+                <h3>
+                    Nmap Port Scan Project
+                </h3>
+
+                <p>
+                    Practical network reconnaissance using Nmap to identify
+                    open ports and analyze exposed network services.
+                </p>
+
+                <div class="project-tools">
+
+                    <span class="tool">Nmap</span>
+                    <span class="tool">Network Security</span>
+                    <span class="tool">Reconnaissance</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/TharaniBuddhima/nmap-port-scan-project"
+                    target="_blank"
+                    class="project-link">
+                    View Project on GitHub →
+                </a>
+
+            </div>
 
 
-        <div class="project">
-            <h3>Password Brute Force Analysis</h3>
 
-            <p>
-                Security project exploring password brute-force concepts and
-                techniques within an authorized testing environment.
-            </p>
+            <!-- PROJECT 02 -->
 
-            <a href="https://github.com/TharaniBuddhima/Password-brute-force"
-               target="_blank">
-                View on GitHub →
-            </a>
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
+
+                <h3>
+                    Wireshark Traffic Analysis
+                </h3>
+
+                <p>
+                    Network traffic analysis involving packet inspection,
+                    protocol analysis, IP endpoints and TCP communication.
+                </p>
+
+                <div class="project-tools">
+
+                    <span class="tool">Wireshark</span>
+                    <span class="tool">Packet Analysis</span>
+                    <span class="tool">TCP/IP</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/TharaniBuddhima/wireshark-traffic-analysis"
+                    target="_blank"
+                    class="project-link">
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+
+
+            <!-- PROJECT 03 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 03
+                </div>
+
+                <h3>
+                    Wireshark Suspicious Traffic Analysis
+                </h3>
+
+                <p>
+                    Practical investigation of network traffic including
+                    SYN, ICMP, DNS and TCP communication to identify
+                    potentially suspicious activity.
+                </p>
+
+                <div class="project-tools">
+
+                    <span class="tool">Wireshark</span>
+                    <span class="tool">DNS</span>
+                    <span class="tool">ICMP</span>
+                    <span class="tool">TCP</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/TharaniBuddhima/wireshark-suspicious-analysis"
+                    target="_blank"
+                    class="project-link">
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+
+
+            <!-- PROJECT 04 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 04
+                </div>
+
+                <h3>
+                    John the Ripper Password Security
+                </h3>
+
+                <p>
+                    Hands-on password security project exploring password
+                    hashes and password-cracking techniques in an
+                    authorized laboratory environment.
+                </p>
+
+                <div class="project-tools">
+
+                    <span class="tool">John the Ripper</span>
+                    <span class="tool">Hash Security</span>
+                    <span class="tool">Kali Linux</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/TharaniBuddhima/John-the-Ripper-Password-Cracking-Project"
+                    target="_blank"
+                    class="project-link">
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+
+
+            <!-- PROJECT 05 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 05
+                </div>
+
+                <h3>
+                    Password Brute Force Analysis
+                </h3>
+
+                <p>
+                    Practical security project exploring password brute-force
+                    concepts and techniques within an authorized testing
+                    environment.
+                </p>
+
+                <div class="project-tools">
+
+                    <span class="tool">Password Security</span>
+                    <span class="tool">Brute Force</span>
+                    <span class="tool">Security Testing</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/TharaniBuddhima/Password-brute-force"
+                    target="_blank"
+                    class="project-link">
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+
+
+            <!-- PROJECT 06 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 06
+                </div>
+
+                <h3>
+                    Password Vulnerability Assessment
+                </h3>
+
+                <p>
+                    A developing project focused on assessing password
+                    vulnerabilities and understanding password hash security
+                    through a web-based security assessment system.
+                </p>
+
+                <div class="project-tools">
+
+                    <span class="tool">Java</span>
+                    <span class="tool">Web Security</span>
+                    <span class="tool">Hash Analysis</span>
+
+                </div>
+
+                <span class="project-link">
+                    Currently Developing
+                </span>
+
+            </div>
+
         </div>
 
     </div>
+
 </section>
 
 
-<section id="contact" class="contact">
-    <h2 class="section-title">Contact</h2>
 
-    <p>
-        <strong>GitHub:</strong>
-        <a href="https://github.com/TharaniBuddhima" target="_blank">
-            github.com/TharaniBuddhima
-        </a>
-    </p>
+<!-- =========================
+     EDUCATION
+========================= -->
 
-    <p>
-        <strong>LinkedIn:</strong>
-        <a href="#" target="_blank">
-            Add your LinkedIn profile
-        </a>
-    </p>
+<section id="education">
 
-    <p>
-        <strong>Email:</strong>
-        Add your professional email
-    </p>
+    <div class="container">
+
+        <div class="section-label">
+            04 · Education & Learning
+        </div>
+
+        <h2 class="section-title">
+            Academic Background
+        </h2>
+
+
+        <div class="learning-card">
+
+            <h3>
+                Physical Science ICT
+            </h3>
+
+            <div class="institution">
+                University of Sri Jayewardenepura
+            </div>
+
+            <p>
+                Undergraduate studies combining physical science and
+                information and communication technology, while building
+                additional practical skills toward a career in cybersecurity.
+            </p>
+
+        </div>
+
+        <br><br>
+
+
+        <div class="learning-card">
+
+            <h3>
+                Cybersecurity Development
+            </h3>
+
+            <div class="institution">
+                Practical Learning & Security Labs
+            </div>
+
+            <p>
+                Developing practical knowledge through cybersecurity projects,
+                OWASP learning, Kali Linux, network analysis, web security
+                testing and ethical hacking laboratories.
+            </p>
+
+        </div>
+
+    </div>
+
 </section>
 
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-label">
+            05 · Contact
+        </div>
+
+
+        <div class="contact-box">
+
+            <div>
+
+                <h2>
+                    Let's connect.
+                </h2>
+
+                <p>
+                    Interested in cybersecurity opportunities,
+                    internships and security-related projects.
+                </p>
+
+            </div>
+
+
+            <div class="contact-links">
+
+                <a
+                    href="https://github.com/TharaniBuddhima"
+                    target="_blank"
+                    class="btn btn-secondary">
+                    GitHub
+                </a>
+
+
+                <!-- Replace # with your LinkedIn URL -->
+
+                <a
+                    href="#"
+                    target="_blank"
+                    class="btn btn-secondary">
+                    LinkedIn
+                </a>
+
+
+                <!-- Replace with your professional email -->
+
+                <a
+                    href="mailto:YOUR_EMAIL@example.com"
+                    class="btn btn-primary">
+                    Email Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
-    © 2026 Tharani Budhima | Cybersecurity Portfolio
+
+    <div class="container">
+
+        © 2026 Tharani Budhima · Physical Science ICT · Cybersecurity
+
+    </div>
+
 </footer>
+
 
 </body>
 </html>
