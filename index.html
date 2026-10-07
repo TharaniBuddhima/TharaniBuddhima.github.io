@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tharani Budhima | Cybersecurity Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0f19;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+        }
+
+        header h2 {
+            color: #00ff99;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: #00ff99;
+        }
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #00ff99;
+        }
+
+        .hero h3 {
+            font-size: 25px;
+            color: #b8c1d1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            color: #aeb7c7;
+            font-size: 18px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background: #00ff99;
+            color: #07100c;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #00cc7a;
+        }
+
+        h2.section-title {
+            font-size: 35px;
+            margin-bottom: 30px;
+            color: #00ff99;
+        }
+
+        .about p {
+            max-width: 850px;
+            color: #c4cad5;
+            font-size: 17px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill {
+            background: #151c2b;
+            padding: 12px 20px;
+            border-radius: 6px;
+            border: 1px solid #263247;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project {
+            background: #151c2b;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #263247;
+        }
+
+        .project h3 {
+            color: #00ff99;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: #b8c1d1;
+            margin-bottom: 15px;
+        }
+
+        .project a {
+            color: #00ff99;
+            text-decoration: none;
+        }
+
+        .contact p {
+            margin-bottom: 10px;
+            color: #c4cad5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #111827;
+            color: #8993a5;
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>TB.</h2>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+
+<section class="hero">
+    <h1>Hi, I'm <span>Tharani Budhima</span></h1>
+
+    <h3>Cybersecurity Undergraduate</h3>
+
+    <p>
+        Undergraduate with a strong interest in cybersecurity, ethical hacking,
+        vulnerability assessment, network security and security analysis.
+        Currently developing practical skills through hands-on security projects
+        and laboratory environments.
+    </p>
+
+    <a class="button" href="#projects">View My Projects</a>
+</section>
+
+
+<section id="about" class="about">
+    <h2 class="section-title">About Me</h2>
+
+    <p>
+        I am an undergraduate in Physical Science ICT with a focus on developing
+        practical cybersecurity and ethical hacking skills. My learning involves
+        network scanning, traffic analysis, vulnerability assessment,
+        web application security and password security.
+    </p>
+
+    <br>
+
+    <p>
+        I enjoy working with security tools and building hands-on projects to
+        understand how vulnerabilities can be identified, analyzed and addressed.
+    </p>
+</section>
+
+
+<section id="skills">
+    <h2 class="section-title">Cybersecurity Skills</h2>
+
+    <div class="skills">
+        <div class="skill">Nmap</div>
+        <div class="skill">Wireshark</div>
+        <div class="skill">Burp Suite</div>
+        <div class="skill">Kali Linux</div>
+        <div class="skill">OWASP</div>
+        <div class="skill">DVWA</div>
+        <div class="skill">John the Ripper</div>
+        <div class="skill">Network Security</div>
+        <div class="skill">Web Security</div>
+        <div class="skill">Vulnerability Assessment</div>
+        <div class="skill">Ethical Hacking</div>
+        <div class="skill">Git & GitHub</div>
+    </div>
+</section>
+
+
+<section id="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects">
+
+        <div class="project">
+            <h3>Nmap Port Scan Project</h3>
+
+            <p>
+                Practical network reconnaissance project using Nmap to identify
+                open ports and understand exposed network services.
+            </p>
+
+            <a href="https://github.com/TharaniBuddhima/nmap-port-scan-project"
+               target="_blank">
+                View on GitHub →
+            </a>
+        </div>
+
+
+        <div class="project">
+            <h3>Wireshark Traffic Analysis</h3>
+
+            <p>
+                Network traffic analysis project involving packet inspection,
+                protocols, IP endpoints and TCP communication.
+            </p>
+
+            <a href="https://github.com/TharaniBuddhima/wireshark-traffic-analysis"
+               target="_blank">
+                View on GitHub →
+            </a>
+        </div>
+
+
+        <div class="project">
+            <h3>Wireshark Suspicious Traffic Analysis</h3>
+
+            <p>
+                Practical investigation of suspicious network traffic including
+                SYN, ICMP, DNS and TCP communication.
+            </p>
+
+            <a href="https://github.com/TharaniBuddhima/wireshark-suspicious-analysis"
+               target="_blank">
+                View on GitHub →
+            </a>
+        </div>
+
+
+        <div class="project">
+            <h3>John the Ripper Password Security</h3>
+
+            <p>
+                Hands-on password security project exploring password hashes
+                and password-cracking techniques in an ethical lab environment.
+            </p>
+
+            <a href="https://github.com/TharaniBuddhima/John-the-Ripper-Password-Cracking-Project"
+               target="_blank">
+                View on GitHub →
+            </a>
+        </div>
+
+
+        <div class="project">
+            <h3>Password Brute Force Analysis</h3>
+
+            <p>
+                Security project exploring password brute-force concepts and
+                techniques within an authorized testing environment.
+            </p>
+
+            <a href="https://github.com/TharaniBuddhima/Password-brute-force"
+               target="_blank">
+                View on GitHub →
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="contact" class="contact">
+    <h2 class="section-title">Contact</h2>
+
+    <p>
+        <strong>GitHub:</strong>
+        <a href="https://github.com/TharaniBuddhima" target="_blank">
+            github.com/TharaniBuddhima
+        </a>
+    </p>
+
+    <p>
+        <strong>LinkedIn:</strong>
+        <a href="#" target="_blank">
+            Add your LinkedIn profile
+        </a>
+    </p>
+
+    <p>
+        <strong>Email:</strong>
+        Add your professional email
+    </p>
+</section>
+
+
+<footer>
+    © 2026 Tharani Budhima | Cybersecurity Portfolio
+</footer>
+
+</body>
+</html>
