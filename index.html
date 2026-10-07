@@ -880,7 +880,8 @@ footer {
 @media (max-width: 850px) {
 
     nav {
-        display: none;
+        display: flex;
+        padding: 15px 20px;
     }
 
     .hero-content,
@@ -905,6 +906,11 @@ footer {
         gap: 25px;
     }
 
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
     .contact-box {
         flex-direction: column;
         align-items: flex-start;
@@ -914,25 +920,17 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    /* =========================
-       MOBILE NAVIGATION
-    ========================= */
-    
-    nav {
-        padding: 15px 20px;
-    }
-    
     .nav-links {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 12px 18px;
     }
-    
+
     .nav-links a {
         font-size: 12px;
     }
-    
+
     .logo {
         font-size: 18px;
     }
@@ -975,16 +973,13 @@ footer {
 
     .education-card {
         flex-direction: column;
-
         padding: 24px;
-
         gap: 20px;
     }
 
     .education-icon {
         width: 50px;
         height: 50px;
-
         min-width: 50px;
     }
 
@@ -1001,8 +996,8 @@ footer {
     }
 
     .photo-frame {
-    width: 260px;
-    height: 260px;
+        width: 260px;
+        height: 260px;
     }
 
     .hero-photo {
